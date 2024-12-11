@@ -4,14 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
+import com.hawaiianmoose.munchmatch.view.ListHome
+import com.hawaiianmoose.munchmatch.view.SignInView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,29 +18,22 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MunchMatchTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                RootNavHost(false) //isUserLoggedIn
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun RootNavHost(isUserLoggedIn: Boolean) {
+    val navController = rememberNavController()
+    val startDestination = if (isUserLoggedIn) "listhome" else "signin"
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MunchMatchTheme {
-        Greeting("Android")
+    NavHost(
+        navController = navController,
+        startDestination = startDestination
+    ) {
+        composable("signin") { SignInView(navController) }
+        composable("listhome") { ListHome(navController) }
     }
 }
