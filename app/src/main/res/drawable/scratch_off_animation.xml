@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="158dp"
+            android:height="23dp"
+            android:viewportWidth="158"
+            android:viewportHeight="23">
+            <path
+                android:name="scratchoff"
+                android:pathData="M 35.055 4.34 C 82.481 0.947 108.974 0.733 156.174 1.364 L 1.663 7.205 C 55.773 5.232 85.86 5.314 138.871 8.418 C 77.806 11.689 51.538 13.106 24.586 14.589 C 51.007 10.259 59.499 11.264 82.009 11.264 C 115.566 11.264 117.092 10.577 139.863 13.708 L 94.317 16.991 L 7.063 20.43 C 7.063 20.43 55.516 17.542 84.804 17.779 C 114.092 18.016 157.056 21.642 157.056 21.642"
+                android:strokeColor="#2859c5"
+                android:strokeAlpha="0.5"
+                android:strokeWidth="1.5"
+                android:strokeLineCap="round"
+                android:strokeLineJoin="round"/>
+        </vector>
+    </aapt:attr>
+    <target android:name="scratchoff">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="trimPathEnd"
+                android:duration="400"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+</animated-vector>
