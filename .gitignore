@@ -26,3 +26,4 @@ replay_pid*
 *.bin
 *.bin
 *.lock
+.idea/workspace.xml

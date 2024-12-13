@@ -24,7 +24,7 @@ fun ArchHeader() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .size(220.dp)
+            .size(240.dp)
             .padding(bottom = 4.dp)
     ) {
         ConstraintLayout {
@@ -32,7 +32,7 @@ fun ArchHeader() {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .size(200.dp)
+                    .size(240.dp)
                     .clip(RoundedCornerShape(0.dp, 0.dp, 28.dp, 28.dp))
                     .background(MaterialTheme.colorScheme.primary)
                     .constrainAs(box) {
@@ -41,24 +41,24 @@ fun ArchHeader() {
                 content = {
                     Text(
                         text = "Munch Match",
-                        color = Color.White,
+                        color = MaterialTheme.colorScheme.secondary,
                         fontSize = 40.sp,
                         modifier = Modifier
-                            .align(Alignment.TopCenter)
+                            .align(Alignment.Center)
                             .padding(top = 8.dp)
                     )
                 }
             )
-            Image(
-                imageVector = ImageVector.vectorResource(id = R.drawable.arch_header),
-                contentDescription = "Arch Image",
-                modifier = Modifier
-                    .offset(y = 16.dp)
-                    .constrainAs(arch) {
-                        bottom.linkTo(box.bottom)
-                        centerHorizontallyTo(parent)
-                    }
-            )
+//            Image(
+//                imageVector = ImageVector.vectorResource(id = R.drawable.arch_header),
+//                contentDescription = "Arch Image",
+//                modifier = Modifier
+//                    .offset(y = 16.dp)
+//                    .constrainAs(arch) {
+//                        bottom.linkTo(box.bottom)
+//                        centerHorizontallyTo(parent)
+//                    }
+//            )
         }
     }
 }
