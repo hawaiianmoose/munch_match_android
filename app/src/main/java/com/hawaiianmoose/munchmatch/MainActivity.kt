@@ -15,6 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.view.ListHome
 import com.hawaiianmoose.munchmatch.view.SignInView
+import com.hawaiianmoose.munchmatch.view.control.SignUpView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +44,7 @@ fun RootNavHost(isUserLoggedIn: Boolean) {
         startDestination = startDestination
     ) {
         composable("signin") { SignInView(navController) }
+        composable("signup") { SignUpView(navController) }
         composable("listhome") { ListHome(navController) }
     }
 }

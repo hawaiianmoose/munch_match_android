@@ -57,7 +57,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Composable
-fun SignInView(navController: NavHostController) {
+fun SignInView(navigator: NavHostController) {
     val scrollState = rememberScrollState()
     val isScreenOverflow = rememberScreenInfo().screenHeight < 720.dp
     val focusManager = LocalFocusManager.current
@@ -120,7 +120,7 @@ fun SignInView(navController: NavHostController) {
                         coroutineScope,
                         loadingState,
                         emailTextState,
-                        navController
+                        navigator
                     )//temp
 //                if (Firebase.auth.currentUser == null) {
 //                    if (Patterns.EMAIL_ADDRESS.matcher(emailTextState.value.text).matches()) {
@@ -172,7 +172,7 @@ fun SignInView(navController: NavHostController) {
                             Text(
                                 stringResource(R.string.signup_button),
                                 modifier = Modifier.noRippleClickable {
-                                    //navController.navigate(SignUpViewDestination())
+                                    navigator.navigate("signup")
                                 })
                         }
                     }
@@ -208,7 +208,7 @@ private fun completeSignIn(
     coroutineScope: CoroutineScope,
     loadingState: MutableState<Boolean>,
     emailTextState: MutableState<TextFieldValue>,
-    navController: NavHostController
+    navigator: NavHostController
 ) {
 //    UserProfileClient.fetchOrCreateUserProfile(userId, onSuccess = { userProfile ->
 //        coroutineScope.launch {
@@ -223,6 +223,8 @@ private fun completeSignIn(
 //            emailTextState.value = TextFieldValue()
 //        }
 //    })
+    navigator.popBackStack() //close off account back stack
+    navigator.navigate("listhome")
 }
 
 @Composable
