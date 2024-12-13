@@ -21,7 +21,7 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     bodyMedium = TextStyle(
         fontFamily = FontFamilies.default,
@@ -29,7 +29,7 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     bodySmall = TextStyle(
         fontFamily = FontFamilies.default,
@@ -37,7 +37,7 @@ val Typography = Typography(
         fontSize = 10.sp,
         lineHeight = 14.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     labelLarge = TextStyle(
         fontFamily = FontFamilies.default,
@@ -45,7 +45,7 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     labelMedium = TextStyle(
         fontFamily = FontFamilies.default,
@@ -53,7 +53,7 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = SecondaryBlue50
+        color = SecondaryBlue
     ),
     labelSmall = TextStyle(
         fontFamily = FontFamilies.default,
@@ -61,7 +61,7 @@ val Typography = Typography(
         fontSize = 14.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     displayLarge = TextStyle(
         fontFamily = FontFamilies.default,
@@ -69,7 +69,7 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     displayMedium = TextStyle(
         fontFamily = FontFamilies.default,
@@ -77,7 +77,7 @@ val Typography = Typography(
         fontSize = 20.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     displaySmall = TextStyle(
         fontFamily = FontFamilies.default,
@@ -93,7 +93,7 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     headlineMedium = TextStyle(
         fontFamily = FontFamilies.default,
@@ -101,7 +101,7 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     headlineSmall = TextStyle(
         fontFamily = FontFamilies.default,
@@ -109,7 +109,7 @@ val Typography = Typography(
         fontSize = 12.sp,
         lineHeight = 14.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     titleLarge = TextStyle(
         fontFamily = FontFamilies.default,
@@ -117,7 +117,7 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     ),
     titleMedium = TextStyle(
         fontFamily = FontFamilies.default,
@@ -133,6 +133,6 @@ val Typography = Typography(
         fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
-        color = PrimaryBlue
+        color = SecondaryBlue
     )
 )

@@ -24,7 +24,7 @@ fun ArchHeader() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .size(240.dp)
+            .size(220.dp)
             .padding(bottom = 4.dp)
     ) {
         ConstraintLayout {
@@ -32,7 +32,7 @@ fun ArchHeader() {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .size(240.dp)
+                    .size(220.dp)
                     .clip(RoundedCornerShape(0.dp, 0.dp, 28.dp, 28.dp))
                     .background(MaterialTheme.colorScheme.primary)
                     .constrainAs(box) {
