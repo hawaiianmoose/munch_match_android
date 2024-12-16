@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Munch Match</string>
-    <string name="username_email_hint">Email</string>
+    <string name="email_hint">Email</string>
+    <string name="username_hint">Username</string>
     <string name="email_validation">"Must enter a valid email."</string>
+    <string name="username_validation">"Must enter a value."</string>
     <string name="pw_match">"Passwords do not match."</string>
     <string name="pw_length">"New password must contain at least 8 characters."</string>
     <string name="password_hint">Password</string>

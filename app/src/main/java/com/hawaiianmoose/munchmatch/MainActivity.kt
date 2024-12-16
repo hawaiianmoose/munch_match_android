@@ -9,17 +9,22 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.hawaiianmoose.munchmatch.data.DataStoreInitializer
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
-import com.hawaiianmoose.munchmatch.view.ListHome
+import com.hawaiianmoose.munchmatch.view.ListHomeView
 import com.hawaiianmoose.munchmatch.view.SignInView
-import com.hawaiianmoose.munchmatch.view.control.SignUpView
+import com.hawaiianmoose.munchmatch.view.SignUpView
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initializeDataStore()
+
         enableEdgeToEdge()
         setContent {
             MunchMatchTheme {
@@ -30,6 +35,11 @@ class MainActivity : ComponentActivity() {
                     RootNavHost(false) //isUserLoggedIn
                 }
             }
+        }
+    }
+    private fun initializeDataStore() {
+        lifecycleScope.launch {
+            DataStoreInitializer.initDataStore(applicationContext)
         }
     }
 }
@@ -45,6 +55,6 @@ fun RootNavHost(isUserLoggedIn: Boolean) {
     ) {
         composable("signin") { SignInView(navController) }
         composable("signup") { SignUpView(navController) }
-        composable("listhome") { ListHome(navController) }
+        composable("listhome") { ListHomeView(navController) }
     }
 }

@@ -14,10 +14,10 @@ import androidx.compose.ui.unit.dp
 import androidx.core.view.ViewCompat
 
 private val ColorScheme = lightColorScheme(
-    primary = PrimaryBlue,
-    secondary = SecondaryBlue,
-    tertiary = PrimaryLight,
-    primaryContainer = ContainerBlue,
+    primary = PrimaryRed,
+    secondary = SecondaryGold,
+    tertiary = PrimaryRed,
+    primaryContainer = PrimaryContainer,
     tertiaryContainer = ButtonGreen,
     onBackground = BackgroundLight,
     secondaryContainer = SecondaryBlue25,

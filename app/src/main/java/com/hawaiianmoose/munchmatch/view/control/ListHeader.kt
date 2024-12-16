@@ -23,8 +23,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.view.dialog.NewListDialog
-import com.hawaiianmoose.munchmatch.viewmodel.ListViewModel
 import com.hawaiianmoose.munchmatch.R
+import com.hawaiianmoose.munchmatch.viewmodel.ListViewModel
 
 @Composable
 fun ListHeader(

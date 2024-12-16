@@ -1,4 +1,4 @@
-package com.hawaiianmoose.munchmatch.view.control
+package com.hawaiianmoose.munchmatch.view
 
 import android.util.Log
 import android.util.Patterns
@@ -31,6 +31,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -41,8 +42,14 @@ import com.hawaiianmoose.munchmatch.R
 import com.hawaiianmoose.munchmatch.ui.theme.FontFamilies
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.util.Validator
+import com.hawaiianmoose.munchmatch.view.control.EmailTextInput
+import com.hawaiianmoose.munchmatch.view.control.GreenSwitch
+import com.hawaiianmoose.munchmatch.view.control.LoadableGreenButton
+import com.hawaiianmoose.munchmatch.view.control.PasswordInput
+import com.hawaiianmoose.munchmatch.view.control.SparkleFooter
+import com.hawaiianmoose.munchmatch.view.control.UsernameTextInput
+import com.hawaiianmoose.munchmatch.view.control.noRippleClickable
 import com.hawaiianmoose.munchmatch.view.dialog.ErrorDialog
-import kotlinx.coroutines.launch
 
 @Composable
 fun SignUpView(navigator: NavHostController) {
@@ -54,6 +61,8 @@ fun SignUpView(navigator: NavHostController) {
     val checkedPolicyState = remember { mutableStateOf(true) }
     val emailTextState = remember { mutableStateOf(TextFieldValue()) }
     val emailErrorState = remember { mutableStateOf(false) }
+    val usernameTextState = remember { mutableStateOf(TextFieldValue()) }
+    val usernameErrorState = remember { mutableStateOf(false) }
     val pwErrorState = remember { mutableStateOf(false) }
     val pwMatchState = remember { mutableStateOf(true) }
     val loadingState = remember { mutableStateOf(false) }
@@ -82,14 +91,29 @@ fun SignUpView(navigator: NavHostController) {
     Column(
         Modifier
             .zIndex(1f)
-            .padding(start = 24.dp, end = 24.dp, bottom = 12.dp, top = 12.dp)
+            .padding(start = 24.dp, end = 24.dp, bottom = 12.dp, top = 54.dp)
             .verticalScroll(scrollState, true)
             .fillMaxWidth()
     ) {
         Column {
+            Text(
+                "Find your perfect match and make meal time amore!",
+                fontFamily = FontFamilies.italic,
+                color = MaterialTheme.colorScheme.primary,
+                textAlign = TextAlign.Center,
+                fontSize = 26.sp
+            )
+            Spacer(Modifier.size(24.dp))
+            UsernameTextInput(
+                usernameTextState,
+                stringResource(R.string.username_hint),
+                focusManager,
+                usernameErrorState
+            )
+            Spacer(Modifier.size(8.dp))
             EmailTextInput(
                 emailTextState,
-                stringResource(R.string.username_email_hint),
+                stringResource(R.string.email_hint),
                 focusManager,
                 emailErrorState
             )
@@ -151,6 +175,10 @@ fun SignUpView(navigator: NavHostController) {
                         termsMessage,
                         Toast.LENGTH_LONG
                     ).show()
+                }
+
+                if (usernameTextState.value.text.isBlank()) {
+                    usernameErrorState.value = true
                 }
 
                 if (!Patterns.EMAIL_ADDRESS.matcher(emailTextState.value.text).matches()) {

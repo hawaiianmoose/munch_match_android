@@ -38,6 +38,55 @@ import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.R
 
 @Composable
+fun UsernameTextInput(
+    textState: MutableState<TextFieldValue>,
+    hint: String,
+    focusManager: FocusManager,
+    errorState: MutableState<Boolean>
+) {
+    androidx.compose.material3.OutlinedTextField(
+        value = textState.value,
+        singleLine = true,
+        placeholder = {
+            Text(
+                text = hint,
+                style = MaterialTheme.typography.labelMedium
+            )
+        },
+        onValueChange = {
+            textState.value = it
+            errorState.value = false
+        },
+        isError = errorState.value,
+        supportingText = {
+            if (errorState.value) {
+                Text(
+                    text = stringResource(R.string.email_validation),
+                    color = MaterialTheme.colorScheme.error
+                )
+            }
+        },
+        modifier = Modifier.fillMaxWidth(),
+        textStyle = MaterialTheme.typography.bodyMedium,
+        colors = OutlinedTextFieldDefaults.colors(
+            focusedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+            unfocusedContainerColor = MaterialTheme.colorScheme.primaryContainer,
+            focusedPlaceholderColor = MaterialTheme.colorScheme.primary,
+            unfocusedPlaceholderColor = MaterialTheme.colorScheme.primary,
+            focusedBorderColor = MaterialTheme.colorScheme.primary,
+            cursorColor = MaterialTheme.colorScheme.secondary,
+            unfocusedBorderColor = Color.Transparent,
+            errorBorderColor = MaterialTheme.colorScheme.error
+        ),
+        shape = RoundedCornerShape(6.dp),
+        keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+        keyboardActions = KeyboardActions(onNext = {
+            focusManager.moveFocus(FocusDirection.Down)
+        })
+    )
+}
+
+@Composable
 fun EmailTextInput(
     textState: MutableState<TextFieldValue>,
     hint: String,
@@ -74,6 +123,7 @@ fun EmailTextInput(
             focusedPlaceholderColor = MaterialTheme.colorScheme.primary,
             unfocusedPlaceholderColor = MaterialTheme.colorScheme.primary,
             focusedBorderColor = MaterialTheme.colorScheme.primary,
+            cursorColor = MaterialTheme.colorScheme.secondary,
             unfocusedBorderColor = Color.Transparent,
             errorBorderColor = MaterialTheme.colorScheme.error
         ),
@@ -137,6 +187,7 @@ fun PasswordInput(
             focusedPlaceholderColor = MaterialTheme.colorScheme.primary,
             unfocusedPlaceholderColor = MaterialTheme.colorScheme.primary,
             focusedBorderColor = MaterialTheme.colorScheme.primary,
+            cursorColor = MaterialTheme.colorScheme.secondary,
             unfocusedBorderColor = Color.Transparent,
             errorBorderColor = MaterialTheme.colorScheme.error
         ),
@@ -158,7 +209,7 @@ fun PasswordInput(
 
             // Toggle button to hide or display password
             IconButton(onClick = {}) {
-                Icon(imageVector = image, description, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.noRippleClickable { passwordVisible = !passwordVisible })
+                Icon(imageVector = image, description, tint = MaterialTheme.colorScheme.secondary, modifier = Modifier.noRippleClickable { passwordVisible = !passwordVisible })
             }
         }
     )
