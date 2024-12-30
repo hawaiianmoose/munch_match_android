@@ -28,7 +28,7 @@
     <string name="list_name_validation">List name cannot be empty.</string>
     <string name="zero_items">0 items</string>
     <string name="create_list">Create List</string>
-    <string name="my_lists">My Lists</string>
+    <string name="my_munch_lists">My Munch Lists</string>
     <string name="edit_list">Edit List</string>
     <string name="sort_alpha">Sort Items Alphabetically</string>
     <string name="show_item_details">Show Item Details</string>

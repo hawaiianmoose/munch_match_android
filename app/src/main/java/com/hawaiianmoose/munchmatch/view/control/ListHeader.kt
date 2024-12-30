@@ -37,7 +37,7 @@ fun ListHeader(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .size(84.dp)
+            .size(120.dp)
             .background(Color.Transparent)
     ) {
         Box(
@@ -47,7 +47,7 @@ fun ListHeader(
                 .background(MaterialTheme.colorScheme.primary),
             content = {
                 Text(
-                    text = stringResource(R.string.my_lists),
+                    text = stringResource(R.string.my_munch_lists),
                     color = Color.White,
                     fontSize = 24.sp,
                     modifier = Modifier

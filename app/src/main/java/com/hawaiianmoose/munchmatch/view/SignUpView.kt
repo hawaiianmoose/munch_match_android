@@ -91,7 +91,7 @@ fun SignUpView(navigator: NavHostController) {
     Column(
         Modifier
             .zIndex(1f)
-            .padding(start = 24.dp, end = 24.dp, bottom = 12.dp, top = 54.dp)
+            .padding(start = 24.dp, end = 24.dp, bottom = 12.dp, top = 64.dp)
             .verticalScroll(scrollState, true)
             .fillMaxWidth()
     ) {
