@@ -16,7 +16,7 @@ class ListViewModel: ViewModel() {
     init {
         viewModelScope.launch {
             _eateryLists.value = DataStoreProvider.getStoredLists()
-            //syncListsFromNetwork() TODO firebase uncomment
+            syncListsFromNetwork()
         }
     }
 

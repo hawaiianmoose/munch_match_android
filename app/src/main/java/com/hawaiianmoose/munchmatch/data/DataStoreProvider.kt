@@ -39,7 +39,7 @@ object DataStoreProvider {
             migrations = emptyList(),
             produceFile = { producePath().toPath() }
         )
-        isSignedIn = getStoredUserProfile().userName.isNotEmpty()
+        isSignedIn = getStoredUserProfile().userEmail.isNotEmpty()
     }
 
     fun getStoredUserProfile(): UserProfile {

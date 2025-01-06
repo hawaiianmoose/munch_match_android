@@ -13,6 +13,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.google.firebase.Firebase
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.auth
 import com.hawaiianmoose.munchmatch.data.DataStoreInitializer
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.view.ListHomeView
@@ -24,7 +27,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initializeDataStore()
-
         enableEdgeToEdge()
         setContent {
             MunchMatchTheme {
@@ -32,15 +34,20 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.onBackground
                 ) {
-                    RootNavHost(false) //isUserLoggedIn
+                    RootNavHost(isUserLoggedIn())
                 }
             }
         }
     }
     private fun initializeDataStore() {
         lifecycleScope.launch {
+            FirebaseApp.initializeApp(applicationContext)
             DataStoreInitializer.initDataStore(applicationContext)
         }
+    }
+
+    private fun isUserLoggedIn(): Boolean {
+        return Firebase.auth.currentUser != null
     }
 }
 

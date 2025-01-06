@@ -38,7 +38,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
+import com.google.firebase.auth.FirebaseAuth
 import com.hawaiianmoose.munchmatch.R
+import com.hawaiianmoose.munchmatch.data.DataStoreProvider
+import com.hawaiianmoose.munchmatch.model.UserProfile
 import com.hawaiianmoose.munchmatch.ui.theme.FontFamilies
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.util.Validator
@@ -50,6 +53,7 @@ import com.hawaiianmoose.munchmatch.view.control.SparkleFooter
 import com.hawaiianmoose.munchmatch.view.control.UsernameTextInput
 import com.hawaiianmoose.munchmatch.view.control.noRippleClickable
 import com.hawaiianmoose.munchmatch.view.dialog.ErrorDialog
+import kotlinx.coroutines.launch
 
 @Composable
 fun SignUpView(navigator: NavHostController) {
@@ -187,26 +191,26 @@ fun SignUpView(navigator: NavHostController) {
 
                 if (Patterns.EMAIL_ADDRESS.matcher(emailTextState.value.text).matches() && isPasswordValid && termsAccepted
                 ) {
-//                    loadingState.value = true
-//                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailTextState.value.text, password)
-//                        .addOnCompleteListener { task ->
-//                        if (task.isSuccessful) {
-//                            task.result.user?.email?.let { email ->
-//                                val newProfile = UserProfile(userName = email, isNewUser = true)
-//                                coroutineScope.launch {
-//                                    DataStoreProvider.storeUserProfile(newProfile)
-//                                }
-//                                loadingState.value = false
-//                                Navigation.rootNavigator?.popBackStack()
-//                                Navigation.rootNavigator?.navigate(ListHomeViewDestination())
-//                            }
-//                        }
-//                    }
-//                        .addOnFailureListener { fail ->
-//                            errorText = fail.message.toString()
-//                            errorState.value = true
-//                            loadingState.value = false
-//                        }
+                    loadingState.value = true
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailTextState.value.text, password)
+                        .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            task.result.user?.email?.let { email ->
+                                val newProfile = UserProfile(userEmail = email, userName = usernameTextState.value.text, isNewUser = true)
+                                coroutineScope.launch {
+                                    DataStoreProvider.storeUserProfile(newProfile)
+                                }
+                                loadingState.value = false
+                                navigator.popBackStack()
+                                navigator.navigate("listhome")
+                            }
+                        }
+                    }
+                        .addOnFailureListener { fail ->
+                            errorText = fail.message.toString()
+                            errorState.value = true
+                            loadingState.value = false
+                        }
                 }
             }
             Box(modifier = Modifier.zIndex(0f), contentAlignment = BottomCenter

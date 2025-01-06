@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     kotlin("plugin.serialization") version "2.1.0"
     id("com.google.devtools.ksp") version "2.1.0-1.0.29"
-    //id("com.google.gms.google-services") version "4.4.2"
+    id("com.google.gms.google-services") version "4.4.2"
 }
 
 android {
@@ -80,6 +80,8 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.analytics)
+    implementation(libs.gms.play.services.auth)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.hawaiianmoose.munchmatch" />
+                  <option name="mobileSdkAppId" value="1:884803196983:android:a5fb062a61ed27383787b2" />
+                  <option name="projectId" value="munch-match-ebcb4" />
+                  <option name="projectNumber" value="884803196983" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

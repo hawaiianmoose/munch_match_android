@@ -5,7 +5,7 @@ import com.hawaiianmoose.munchmatch.model.EateryList
 import kotlinx.coroutines.tasks.await
 
 object EateryListClient {
-    private var listsReference = FirebaseFirestore.getInstance().collection("mm/data/eaterylists")
+    private var listsReference = FirebaseFirestore.getInstance().collection("eateryLists")
 
     suspend fun getEateryLists(listIds: List<String>): List<EateryList> {
         return try {

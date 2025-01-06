@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "884803196983",
+    "project_id": "munch-match-ebcb4",
+    "storage_bucket": "munch-match-ebcb4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884803196983:android:a5fb062a61ed27383787b2",
+        "android_client_info": {
+          "package_name": "com.hawaiianmoose.munchmatch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkzANVb5g6Q4u-IUGUV5poKbLdG_qJpf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

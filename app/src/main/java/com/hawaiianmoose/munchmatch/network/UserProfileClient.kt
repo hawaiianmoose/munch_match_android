@@ -9,8 +9,8 @@ import com.hawaiianmoose.munchmatch.model.EateryList
 import com.hawaiianmoose.munchmatch.model.UserProfile
 
 object UserProfileClient {
-    private val db = FirebaseFirestore.getInstance().document("mm/data")
-    private val userProfileDb = db.collection("userProfiles")
+    private val userProfileDb = FirebaseFirestore.getInstance().collection("userProfiles")
+    private val eateryDb = FirebaseFirestore.getInstance().collection("eateryLists")
 
     private fun fetchEateryLists(listIds: List<String>, onSuccess: (List<EateryList>) -> Unit, onFailure: (Exception) -> Unit) {
         if (listIds.isEmpty()) {
@@ -18,7 +18,7 @@ object UserProfileClient {
             return
         }
 
-        val eateryListTasks = listIds.map { db.collection("eaterylists").document(it).get() }
+        val eateryListTasks = listIds.map { eateryDb.document(it).get() }
         Tasks.whenAllSuccess<DocumentSnapshot>(eateryListTasks)
             .addOnSuccessListener { eateryListDocuments ->
                 val eateryLists = eateryListDocuments.mapNotNull { it.toObject(EateryList::class.java) }
@@ -43,13 +43,13 @@ object UserProfileClient {
     }
 
     fun storeUserProfile(userProfile: UserProfile) {
-        userProfileDb.document(userProfile.userName).set(userProfile)
+        userProfileDb.document(userProfile.userEmail).set(userProfile)
     }
 
-    fun fetchOrCreateUserProfile(userId: String, onSuccess: (UserProfile) -> Unit) {
-        getUserProfile(userId, { userProfile ->
+    fun fetchOrCreateUserProfile(userEmail: String, onSuccess: (UserProfile) -> Unit) {
+        getUserProfile(userEmail, { userProfile ->
             if (userProfile == null) { // No profile found, create a new one
-                val newProfile = UserProfile(userName = userId, isNewUser = true)
+                val newProfile = UserProfile(userEmail = userEmail, isNewUser = true)
                 storeUserProfile(newProfile)
                 onSuccess(newProfile)
             } else {
@@ -62,18 +62,18 @@ object UserProfileClient {
 
     fun deleteUserProfileAndUnsharedLists(userProfile: UserProfile) {
         FirebaseAuth.getInstance().currentUser?.delete()
-        val userProfileRef = userProfileDb.document(userProfile.userName)
+        val userProfileRef = userProfileDb.document(userProfile.userEmail)
 
         userProfileRef.get().addOnSuccessListener { snapshot ->
             val listIds = snapshot.toObject(UserProfile::class.java)?.listIds ?: return@addOnSuccessListener
 
             fetchEateryLists(listIds, { eateryLists ->
                 eateryLists.forEach { list ->
-                    val eateryListRef = db.collection("eaterylists").document(list.listId)
+                    val eateryListRef = eateryDb.document(list.listId)
                     if (list.sharedUsers.isEmpty()) {
                         eateryListRef.delete() // Delete unshared lists
-                    } else if (list.sharedUsers.contains(userProfile.userName)) {
-                        eateryListRef.update("sharedUsers", FieldValue.arrayRemove(userProfile.userName))
+                    } else if (list.sharedUsers.contains(userProfile.userEmail)) {
+                        eateryListRef.update("sharedUsers", FieldValue.arrayRemove(userProfile.userEmail))
                     }
                 }
                 userProfileRef.delete()

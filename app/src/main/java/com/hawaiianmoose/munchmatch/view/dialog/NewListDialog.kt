@@ -23,7 +23,9 @@ import com.hawaiianmoose.munchmatch.R
 import com.hawaiianmoose.munchmatch.model.EateryList
 import com.hawaiianmoose.munchmatch.ui.theme.LocalDimen
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
+import com.hawaiianmoose.munchmatch.util.IdGenerator
 import com.hawaiianmoose.munchmatch.viewmodel.ListViewModel
+import java.time.Instant
 
 @Composable
 fun NewListDialog(
@@ -133,15 +135,11 @@ fun NewListDialog(
                                     errorState.value = true
                                 } else {
                                     val newEateryList = EateryList(
-//                                        IdGenerator.generateUniqueId(),
-//                                        textState.value.text.trim(),
-//                                        items = listOf(),
-//                                        frequentItems = listOf(),
-//                                        isSortedAlphabetically = true,
-//                                        isShowingItemDetails = true,
-//                                        isCompleteSorted = false,
-//                                        lastUpdated = Instant.now().epochSecond,
-//                                        sharedUsers = emptyList()
+                                        IdGenerator.generateUniqueId(),
+                                        textState.value.text.trim(),
+                                        eateries = listOf(),
+                                        lastUpdated = Instant.now().epochSecond,
+                                        sharedUsers = emptyList()
                                     )
                                     listViewModel.addNewEateryList(newEateryList)
                                     openDialog.value = false

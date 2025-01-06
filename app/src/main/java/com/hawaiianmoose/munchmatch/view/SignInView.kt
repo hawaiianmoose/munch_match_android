@@ -1,6 +1,7 @@
 package com.hawaiianmoose.munchmatch.view
 
 import android.util.Log
+import android.util.Patterns
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -41,7 +42,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
 import com.hawaiianmoose.munchmatch.R
+import com.hawaiianmoose.munchmatch.data.DataStoreProvider
+import com.hawaiianmoose.munchmatch.network.UserProfileClient
 import com.hawaiianmoose.munchmatch.ui.theme.FontFamilies
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.util.rememberScreenInfo
@@ -53,6 +58,7 @@ import com.hawaiianmoose.munchmatch.view.control.SparkleFooter
 import com.hawaiianmoose.munchmatch.view.control.noRippleClickable
 import com.hawaiianmoose.munchmatch.view.dialog.ErrorDialog
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 @Composable
 fun SignInView(navigator: NavHostController) {
@@ -107,39 +113,42 @@ fun SignInView(navigator: NavHostController) {
                             stringResource(R.string.forgot_password_button),
                             fontSize = 12.sp,
                             modifier = Modifier.noRippleClickable {
-                                //navigator.navigate(ResetPasswordViewDestination) //FOR TESTING THIS VIEW ONLY
+                                //navigator.navigate(ResetPasswordViewDestination) //FOR TESTING THIS VIEW ONLY TODO
                                 //navController.navigate(ForgotPasswordViewDestination(emailTextState.value.text))
                             })
                     }
                 }
                 Spacer(Modifier.size(20.dp))
                 GreenButton(label = stringResource(R.string.signin_button)) {
-                    completeSignIn(
-                        "userId",
-                        coroutineScope,
-                        loadingState,
-                        emailTextState,
-                        navigator
-                    )//temp
-//                if (Firebase.auth.currentUser == null) {
-//                    if (Patterns.EMAIL_ADDRESS.matcher(emailTextState.value.text).matches()) {
-//                        loadingState.value = true
-//                        Firebase.auth.signInWithEmailAndPassword(emailTextState.value.text, password)
-//                            .addOnCompleteListener { task ->
-//                                if (task.isSuccessful) { task.result.user?.email?.let {
-//                                    completeSignIn(it, coroutineScope, loadingState, emailTextState)
-//                                }
-//                                }
-//                            }
-//                            .addOnFailureListener { fail ->
-//                                loadingState.value = false
-//                                errorText = fail.message.toString()
-//                                errorState.value = true
-//                            }
-//                    } else {
-//                        emailErrorState.value = true
-//                    }
-//                }
+                    if (Firebase.auth.currentUser == null) {
+                        if (Patterns.EMAIL_ADDRESS.matcher(emailTextState.value.text).matches()) {
+                            loadingState.value = true
+                            Firebase.auth.signInWithEmailAndPassword(
+                                emailTextState.value.text,
+                                password
+                            )
+                                .addOnCompleteListener { task ->
+                                    if (task.isSuccessful) {
+                                        task.result.user?.email?.let {
+                                            completeSignIn(
+                                                it,
+                                                coroutineScope,
+                                                loadingState,
+                                                emailTextState,
+                                                navigator
+                                            )
+                                        }
+                                    }
+                                }
+                                .addOnFailureListener { fail ->
+                                    loadingState.value = false
+                                    errorText = fail.message.toString()
+                                    errorState.value = true
+                                }
+                        } else {
+                            emailErrorState.value = true
+                        }
+                    }
                 }
 
                 Image(
@@ -209,21 +218,18 @@ private fun completeSignIn(
     emailTextState: MutableState<TextFieldValue>,
     navigator: NavHostController
 ) {
-//    UserProfileClient.fetchOrCreateUserProfile(userId, onSuccess = { userProfile ->
-//        coroutineScope.launch {
-//            launch {
-//                DataStoreProvider.storeUserProfile(userProfile)
-//            }
-//            DataStoreProvider.syncListsFromNetwork(userProfile.listIds)
-//            loadingState.value = false
-//            //Navigation.rootNavigator?.popBackStack() //close off account back stack
-//            //Navigation.rootNavigator?.navigate(ListHomeViewDestination())
-//            navController.navigate(ListHomeViewDestination())
-//            emailTextState.value = TextFieldValue()
-//        }
-//    })
-    navigator.popBackStack() //close off account back stack
-    navigator.navigate("listhome")
+    UserProfileClient.fetchOrCreateUserProfile(userId, onSuccess = { userProfile ->
+        coroutineScope.launch {
+            launch {
+                DataStoreProvider.storeUserProfile(userProfile)
+            }
+            DataStoreProvider.syncListsFromNetwork(userProfile.listIds)
+            loadingState.value = false
+            navigator.popBackStack() //close off account back stack
+            navigator.navigate("listhome")
+            emailTextState.value = TextFieldValue()
+        }
+    })
 }
 
 @Composable
