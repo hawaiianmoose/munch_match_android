@@ -3,7 +3,7 @@ package com.hawaiianmoose.munchmatch.ui.theme
 import androidx.compose.ui.graphics.Color
 
 val PrimaryRed = Color(0xFFB0413E)
-val PrimaryBlueModal = Color(0xFF5B80D2)
+val PrimaryBlueModal = Color(0xFFB0413E)
 val PrimaryBlue = Color(0xFFAA0000)
 val SecondaryGold = Color(0xFFC7AE6A)
 val SecondaryBlue50 = Color(0xFF770000)

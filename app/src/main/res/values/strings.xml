@@ -33,9 +33,9 @@
     <string name="sort_alpha">Sort Items Alphabetically</string>
     <string name="show_item_details">Show Item Details</string>
     <string name="move_items_bottom">Move Completed Items To The Bottom</string>
-    <string name="edit_item">Edit Item</string>
+    <string name="edit_eatery">Edit Eatery</string>
     <string name="quantity">quantity</string>
-    <string name="notes">Notes</string>
+    <string name="details">Details</string>
     <string name="lb">lb</string>
     <string name="oz">oz</string>
     <string name="ad">Ad</string>

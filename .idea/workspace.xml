@@ -10,38 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="737b1d4f-143f-4876-a60b-6bf40f4b8ce2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/util/IdGenerator.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/81b7c7ccba3ba141c865da468a6e963d38a8cdf1/sources/org/gradle/accessors/dm/LibrariesForLibs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/81b7c7ccba3ba141c865da468a6e963d38a8cdf1/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/fileHashes/resourceHashesCache.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.9/gc.properties" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/AccountSettingsView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/AddEateryModal.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/DeleteAccountDialog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/EditEateryModal.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/EditListModal.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/SignOutDialog.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/UpdatePasswordModal.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/viewmodel/ListDetailViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/data/DataStoreProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/data/DataStoreProvider.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/network/EateryListClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/network/EateryListClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/network/UserProfileClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/network/UserProfileClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/SignInView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/SignInView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/SignUpView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/SignUpView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/NewListDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/NewListDialog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/viewmodel/ListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/viewmodel/ListViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/ui/theme/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/ui/theme/Color.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/ListHomeView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/ListHomeView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +35,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=/Users/bclifton/.android/avd/Pixel_9_API_35.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=39090DLJH002X0)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -67,6 +51,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="_Designer_Tab" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -100,9 +87,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/control" />
       <recent name="$PROJECT_DIR$/app/src/main/res/font" />
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/util" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -112,9 +99,9 @@
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.hawaiianmoose.munchmatch.viewmodel" />
       <recent name="com.hawaiianmoose.munchmatch.network" />
       <recent name="com.hawaiianmoose.munchmatch.data" />
-      <recent name="com.hawaiianmoose.munchmatch.viewmodel" />
       <recent name="com.hawaiianmoose.munchmatch.model" />
       <recent name="com.hawaiianmoose.munchmatch.util" />
     </key>
@@ -205,18 +192,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/SignInView.kt</url>
-          <line>130</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/SignInView.kt</url>
           <line>143</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/SignInView.kt</url>
-          <line>122</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/network/EateryListClient.kt</url>

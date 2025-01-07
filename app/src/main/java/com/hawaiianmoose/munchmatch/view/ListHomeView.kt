@@ -41,7 +41,7 @@ import kotlin.math.absoluteValue
 fun ListHomeView(navigator: NavHostController, listViewModel: ListViewModel = viewModel()) {
     val eateryListState by listViewModel.eateryLists.collectAsState()
     val navigateToAccountSettings: () -> Unit = {
-        //navigator.navigate(AccountSettingsViewDestination()) TODO NAV
+        navigator.navigate("accountsettings")
     }
 
     Scaffold(

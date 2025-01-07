@@ -18,6 +18,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.auth
 import com.hawaiianmoose.munchmatch.data.DataStoreInitializer
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
+import com.hawaiianmoose.munchmatch.view.AccountSettingsView
 import com.hawaiianmoose.munchmatch.view.ListHomeView
 import com.hawaiianmoose.munchmatch.view.SignInView
 import com.hawaiianmoose.munchmatch.view.SignUpView
@@ -63,5 +64,6 @@ fun RootNavHost(isUserLoggedIn: Boolean) {
         composable("signin") { SignInView(navController) }
         composable("signup") { SignUpView(navController) }
         composable("listhome") { ListHomeView(navController) }
+        composable("accountsettings") { AccountSettingsView(navController) }
     }
 }
