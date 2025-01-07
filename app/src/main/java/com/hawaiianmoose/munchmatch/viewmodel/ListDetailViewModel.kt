@@ -70,9 +70,10 @@ class ListDetailViewModel(private val eateryListClient: EateryListClient, list: 
         }
     }
 
-    fun updateItemList(listName: String) {
+    fun updateItemList(listName: String, isAlphaSorted: Boolean) {
         updateLastUpdated()
         currentList.value.listName = listName
+        currentList.value.isSortedAlphabetically = isAlphaSorted
         viewModelScope.launch {
             DataStoreProvider.updateList(currentList.value)
         }

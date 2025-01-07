@@ -2,6 +2,7 @@ package com.hawaiianmoose.munchmatch.view.dialog
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.hawaiianmoose.munchmatch.R
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.view.control.GreenButton
+import com.hawaiianmoose.munchmatch.view.control.GreenSwitch
 import com.hawaiianmoose.munchmatch.view.control.ModalDialogHeader
 import com.hawaiianmoose.munchmatch.view.control.SparkleFooter
 import com.hawaiianmoose.munchmatch.viewmodel.ListDetailViewModel
@@ -46,6 +48,7 @@ fun EditListModalTransitionDialog(onDismissRequest: () -> Unit,  listDetailViewM
 {
     val textState = remember { mutableStateOf(TextFieldValue(text = listDetailViewModel.currentList.value.listName)) }
     val errorState = remember { mutableStateOf(false) }
+    val alphaSortState = remember { mutableStateOf(listDetailViewModel.currentList.value.isSortedAlphabetically) }
 
     ModalTransitionDialog(onDismissRequest = onDismissRequest) { modalTransitionDialogHelper ->
         Scaffold(
@@ -53,7 +56,7 @@ fun EditListModalTransitionDialog(onDismissRequest: () -> Unit,  listDetailViewM
                 ModalDialogHeader(stringResource(R.string.edit_list), modalTransitionDialogHelper)
             },
             bottomBar = {
-                Box(Modifier.fillMaxWidth()) {
+                Box(Modifier.fillMaxWidth().padding(bottom = 64.dp)) {
                     SparkleFooter()
                     Column(
                         Modifier
@@ -66,7 +69,8 @@ fun EditListModalTransitionDialog(onDismissRequest: () -> Unit,  listDetailViewM
                                 errorState.value = true
                             } else {
                                 listDetailViewModel.updateItemList(
-                                    textState.value.text.trim()
+                                    textState.value.text.trim(),
+                                    alphaSortState.value,
                                 )
                                 modalTransitionDialogHelper::triggerAnimatedClose.invoke()
                             }
@@ -107,6 +111,16 @@ fun EditListModalTransitionDialog(onDismissRequest: () -> Unit,  listDetailViewM
                     ),
                     shape = RoundedCornerShape(6.dp)
                 )
+                Row {
+                    Text(
+                        stringResource(R.string.sort_alpha),
+                        Modifier
+                            .weight(5f)
+                            .align(Alignment.CenterVertically),
+                        fontSize = MaterialTheme.typography.labelSmall.fontSize
+                    )
+                    GreenSwitch(alphaSortState, Modifier.weight(1f))
+                }
             }
         }
     }
@@ -119,6 +133,7 @@ fun EditListModalPreview() {
     val errorState = remember { mutableStateOf(false) }
     val onCloseSharedFlow: MutableSharedFlow<Unit> = remember { MutableSharedFlow() }
     val coroutineScope: CoroutineScope = rememberCoroutineScope()
+    val alphaSortState = remember { mutableStateOf(true) }
 
     MunchMatchTheme {
         Scaffold(
@@ -171,6 +186,16 @@ fun EditListModalPreview() {
                     ),
                     shape = RoundedCornerShape(6.dp)
                 )
+                Row {
+                    Text(
+                        stringResource(R.string.sort_alpha),
+                        Modifier
+                            .weight(5f)
+                            .align(Alignment.CenterVertically),
+                        fontSize = MaterialTheme.typography.labelSmall.fontSize
+                    )
+                    GreenSwitch(alphaSortState, Modifier.weight(1f))
+                }
             }
         }
     }

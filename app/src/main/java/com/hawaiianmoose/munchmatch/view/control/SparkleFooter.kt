@@ -40,7 +40,6 @@ fun SparkleFooter() {
     }
 }
 
-
 @Composable
 @Preview
 fun FooterPreview() {

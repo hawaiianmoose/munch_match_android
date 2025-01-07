@@ -34,6 +34,8 @@ import com.hawaiianmoose.munchmatch.view.control.ListHeader
 import com.hawaiianmoose.munchmatch.view.control.SwipeActions
 import com.hawaiianmoose.munchmatch.view.control.SwipeActionsConfig
 import com.hawaiianmoose.munchmatch.viewmodel.ListViewModel
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import kotlin.math.absoluteValue
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -118,7 +120,8 @@ fun ListHomeView(navigator: NavHostController, listViewModel: ListViewModel = vi
                                     if (listViewModel.isNewUser()) {
                                         listViewModel.sawNewUserTutorial()
                                     }
-                                    //navigator.navigate(ListDetailViewDestination(list)) TODO NAV
+                                    val jsonList = Json.encodeToString(list)
+                                    navigator.navigate("listdetail/$jsonList")
                                 },
                             backgroundColor = Color.White,
                             shape = RoundedCornerShape(

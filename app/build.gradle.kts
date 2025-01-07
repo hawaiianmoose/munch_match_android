@@ -82,6 +82,7 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.analytics)
     implementation(libs.gms.play.services.auth)
+    implementation(libs.androidx.animation.graphics.android)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -66,20 +66,20 @@ import com.hawaiianmoose.munchmatch.view.control.noRippleClickable
 import com.hawaiianmoose.munchmatch.viewmodel.ListDetailViewModel
 
 @Composable
-fun AddEateryModal(
+fun AddItemModal(
     listDetailViewModel: ListDetailViewModel,
     itemsState: List<Eatery>,
     onDismissRequest: () -> Unit,
     showModalTransitionDialog: Boolean
 ) {
     if (showModalTransitionDialog) {
-        AddEateryModalTransitionDialog(onDismissRequest, listDetailViewModel, itemsState)
+        AddItemModalTransitionDialog(onDismissRequest, listDetailViewModel, itemsState)
     }
 }
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun AddEateryModalTransitionDialog(
+fun AddItemModalTransitionDialog(
     onDismissRequest: () -> Unit,
     listDetailViewModel: ListDetailViewModel,
     itemsState: List<Eatery>

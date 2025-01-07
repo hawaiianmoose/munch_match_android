@@ -32,7 +32,7 @@ import com.hawaiianmoose.munchmatch.R
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 
 @Composable
-fun ListMenu(modifier: Modifier = Modifier, removeFunc: () -> Unit, clearFunc: () -> Unit) {
+fun ListMenu(modifier: Modifier = Modifier, clearFunc: () -> Unit) {
     var expanded by remember { mutableStateOf(false) }
 
     Box(modifier = modifier
@@ -53,25 +53,6 @@ fun ListMenu(modifier: Modifier = Modifier, removeFunc: () -> Unit, clearFunc: (
             onDismissRequest = { expanded = false },
             modifier = Modifier.background(color = MaterialTheme.colorScheme.onBackground)
         ) {
-            DropdownMenuItem(
-                text = {
-                    Text(
-                        text = stringResource(id = R.string.remove_menu),
-                        fontSize = MaterialTheme.typography.labelSmall.fontSize
-                    )
-                },
-                leadingIcon = {
-                    Icon(
-                        imageVector = Icons.Default.ClearAll,
-                        contentDescription = stringResource(id = R.string.remove_menu),
-                        tint = MaterialTheme.colorScheme.primary
-                    )
-                },
-                onClick = {
-                    removeFunc()
-                    expanded = !expanded
-                }
-            )
             DropdownMenuItem(
                 text = {
                     Text(
@@ -101,22 +82,22 @@ fun ListMenu(modifier: Modifier = Modifier, removeFunc: () -> Unit, clearFunc: (
 fun PreviewListMenu() {
     MunchMatchTheme {
         Column {
-            DropdownMenuItem(
-                text = {
-                    Text(
-                        text = stringResource(id = R.string.remove_menu),
-                        fontSize = MaterialTheme.typography.labelSmall.fontSize
-                    )
-                },
-                leadingIcon = {
-                    Icon(
-                        imageVector = Icons.Default.ClearAll,
-                        contentDescription = stringResource(id = R.string.remove_menu),
-                        tint = MaterialTheme.colorScheme.primary
-                    )
-                },
-                onClick = { /* TODO removeFunc()*/ }
-            )
+//            DropdownMenuItem(
+//                text = {
+//                    Text(
+//                        text = stringResource(id = R.string.remove_menu),
+//                        fontSize = MaterialTheme.typography.labelSmall.fontSize
+//                    )
+//                },
+//                leadingIcon = {
+//                    Icon(
+//                        imageVector = Icons.Default.ClearAll,
+//                        contentDescription = stringResource(id = R.string.remove_menu),
+//                        tint = MaterialTheme.colorScheme.primary
+//                    )
+//                },
+//                onClick = { /* TODO removeFunc()*/ }
+//            )
             DropdownMenuItem(
                 text = {
                     Text(
