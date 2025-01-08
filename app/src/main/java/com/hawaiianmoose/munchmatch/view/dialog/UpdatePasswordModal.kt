@@ -94,7 +94,7 @@ fun UpdatePasswordModalTransitionDialog(onDismissRequest: () -> Unit)
                 ModalDialogHeader(stringResource(R.string.update_password), modalTransitionDialogHelper)
             },
             bottomBar = {
-                Box(Modifier.fillMaxWidth()) {
+                Box(Modifier.fillMaxWidth().padding(bottom = 72.dp)) {
                     SparkleFooter()
                     Column(
                         Modifier

@@ -56,7 +56,7 @@ fun EditListModalTransitionDialog(onDismissRequest: () -> Unit,  listDetailViewM
                 ModalDialogHeader(stringResource(R.string.edit_list), modalTransitionDialogHelper)
             },
             bottomBar = {
-                Box(Modifier.fillMaxWidth().padding(bottom = 64.dp)) {
+                Box(Modifier.fillMaxWidth().padding(bottom = 72.dp)) {
                     SparkleFooter()
                     Column(
                         Modifier

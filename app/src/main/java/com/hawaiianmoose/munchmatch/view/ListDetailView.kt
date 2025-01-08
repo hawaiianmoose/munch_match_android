@@ -167,16 +167,16 @@ fun ListDetailView(selectedList: EateryList, navigator: NavHostController) {
         topBar = { Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .size(154.dp)
+                    .size(160.dp)
                     .padding(bottom = 8.dp)
                     .background(MaterialTheme.colorScheme.primary),
                 content = {
                     Column(
                         modifier = Modifier
                             .align(CenterStart)
-                            .padding(top = 16.dp, start = 8.dp, end = 8.dp)
+                            .padding(top = 24.dp, start = 8.dp, end = 8.dp)
                     ) {
-                        Row {
+                        Row(Modifier.offset(y = 12.dp)) {
                             IconButton(
                                 onClick = {}
                             ) {
@@ -218,7 +218,7 @@ fun ListDetailView(selectedList: EateryList, navigator: NavHostController) {
                             }
                         }
                         Row(
-                            Modifier.padding(start = 8.dp).offset(y = 4.dp),
+                            Modifier.padding(start = 8.dp).offset(y = 12.dp),
                             horizontalArrangement = Arrangement.Center
                         ) {
                             Text(
@@ -228,7 +228,7 @@ fun ListDetailView(selectedList: EateryList, navigator: NavHostController) {
                             )
                             IconButton(
                                 onClick = {},
-                                modifier = Modifier.offset(x = (-8).dp, y = (-12).dp)
+                                modifier = Modifier.offset(x = (-8).dp, y = (-8).dp)
                             ) {
                                 Icon(
                                     imageVector = ImageVector.vectorResource(R.drawable.edit_icon),
