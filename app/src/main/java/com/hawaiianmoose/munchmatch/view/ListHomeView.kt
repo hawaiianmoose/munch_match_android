@@ -18,21 +18,26 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import com.hawaiianmoose.munchmatch.R
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.util.LastUpdatedConverter
 import com.hawaiianmoose.munchmatch.view.control.ArchFooter
 import com.hawaiianmoose.munchmatch.view.control.CollaboratorBadge
 import com.hawaiianmoose.munchmatch.view.control.EmptyListPlaceholder
+import com.hawaiianmoose.munchmatch.view.control.GreenButton
 import com.hawaiianmoose.munchmatch.view.control.ListHeader
 import com.hawaiianmoose.munchmatch.view.control.SwipeActions
 import com.hawaiianmoose.munchmatch.view.control.SwipeActionsConfig
+import com.hawaiianmoose.munchmatch.view.control.noRippleClickable
 import com.hawaiianmoose.munchmatch.viewmodel.ListViewModel
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -121,7 +126,7 @@ fun ListHomeView(navigator: NavHostController, listViewModel: ListViewModel = vi
                                         listViewModel.sawNewUserTutorial()
                                     }
                                     val jsonList = Json.encodeToString(list)
-                                    navigator.navigate("listdetail/$jsonList")
+                                    navigator.navigate("lobby/$jsonList")
                                 },
                             backgroundColor = Color.White,
                             shape = RoundedCornerShape(
@@ -159,6 +164,19 @@ fun ListHomeView(navigator: NavHostController, listViewModel: ListViewModel = vi
                                         )
                                     }
                                     CollaboratorBadge(numberOfCollaborators = list.sharedUsers.count())
+                                    IconButton(
+                                        onClick = {}
+                                    ) {
+                                        Icon(
+                                            imageVector = ImageVector.vectorResource(R.drawable.edit_icon),
+                                            "Edit List",
+                                            tint = MaterialTheme.colorScheme.primary,
+                                            modifier = Modifier.size(16.dp).offset(x = -10.dp).noRippleClickable {
+                                                val jsonList = Json.encodeToString(list)
+                                                navigator.navigate("listdetail/$jsonList")
+                                            }
+                                        )
+                                    }
                                 }
                             }
                         }

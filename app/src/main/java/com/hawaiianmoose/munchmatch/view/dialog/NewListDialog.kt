@@ -139,7 +139,7 @@ fun NewListDialog(
                                         textState.value.text.trim(),
                                         eateries = listOf(),
                                         lastUpdated = Instant.now().epochSecond,
-                                        sharedUsers = emptyList()
+                                        sharedUsers = listOf("1","2") //TODO make this emptylist
                                     )
                                     listViewModel.addNewEateryList(newEateryList)
                                     openDialog.value = false

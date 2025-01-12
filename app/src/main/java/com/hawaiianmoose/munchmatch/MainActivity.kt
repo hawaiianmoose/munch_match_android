@@ -7,27 +7,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavType
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.auth
 import com.hawaiianmoose.munchmatch.data.DataStoreInitializer
-import com.hawaiianmoose.munchmatch.model.EateryList
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
-import com.hawaiianmoose.munchmatch.view.AccountSettingsView
-import com.hawaiianmoose.munchmatch.view.ListDetailView
-import com.hawaiianmoose.munchmatch.view.ListHomeView
-import com.hawaiianmoose.munchmatch.view.SignInView
-import com.hawaiianmoose.munchmatch.view.SignUpView
+import com.hawaiianmoose.munchmatch.view.RootNavHost
 import kotlinx.coroutines.launch
-import kotlinx.serialization.json.Json
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,31 +42,5 @@ class MainActivity : ComponentActivity() {
 
     private fun isUserLoggedIn(): Boolean {
         return Firebase.auth.currentUser != null
-    }
-}
-
-@Composable
-fun RootNavHost(isUserLoggedIn: Boolean) {
-    val navController = rememberNavController()
-    val startDestination = if (isUserLoggedIn) "listhome" else "signin"
-
-    NavHost(
-        navController = navController,
-        startDestination = startDestination
-    ) {
-        composable(route = "signin") { SignInView(navController) }
-        composable(route = "signup") { SignUpView(navController) }
-        composable(route = "listhome") { ListHomeView(navController) }
-        composable(route = "accountsettings") { AccountSettingsView(navController) }
-        composable(
-            route = "listdetail/{listJson}",
-            arguments = listOf(navArgument("listJson") { type = NavType.StringType })
-        ) { backStackEntry ->
-            val listJson = backStackEntry.arguments?.getString("listJson")
-            val selectedList = listJson?.let { Json.decodeFromString<EateryList>(it) }
-            selectedList?.let {
-                ListDetailView(it, navController)
-            }
-        }
     }
 }
