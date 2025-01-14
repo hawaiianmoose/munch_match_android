@@ -14,6 +14,8 @@
     <string name="signin_button">Sign In</string>
     <string name="signup_button">Sign Up</string>
     <string name="reset_password_button">Reset Password</string>
+    <string name="match_button">Match</string>
+    <string name="join_button">Join</string>
     <string name="go_back_to_login">Go Back to Login</string>
     <string name="save_and_sign_in">Save &amp; Sign In</string>
     <string name="forgot_password_button">Forgot Password?</string>

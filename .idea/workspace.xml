@@ -10,43 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="737b1d4f-143f-4876-a60b-6bf40f4b8ce2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/MatchSession.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/LobbyView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/MatchingView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/RootNavHost.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/viewmodel/LobbyViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/viewmodel/MatchingViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/dependencies-accessors/109057d0144ed24698e7107ae1d8a126943d6d14/sources/org/gradle/accessors/dm/LibrariesForLibs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/dependencies-accessors/109057d0144ed24698e7107ae1d8a126943d6d14/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/dependencies-accessors/81b7c7ccba3ba141c865da468a6e963d38a8cdf1/sources/org/gradle/accessors/dm/LibrariesForLibs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/dependencies-accessors/81b7c7ccba3ba141c865da468a6e963d38a8cdf1/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/dependencies-accessors/cc2ca4811b5a2e3d814216b980678185ceb05d28/sources/org/gradle/accessors/dm/LibrariesForLibs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/dependencies-accessors/cc2ca4811b5a2e3d814216b980678185ceb05d28/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/dependencies-accessors/d6fea57f231bc829bc5c34f0c7b24e9147afc574/sources/org/gradle/accessors/dm/LibrariesForLibs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/dependencies-accessors/d6fea57f231bc829bc5c34f0c7b24e9147afc574/sources/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/dependencies-accessors/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10.1/gc.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/Contact.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/Contact.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/Eatery.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/Eatery.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/EateryList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/EateryList.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/EaterySuggestion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/EaterySuggestion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/UserProfile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/UserProfile.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/ListLobby.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/ListLobby.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/ListHomeView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/ListHomeView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/NewListDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/NewListDialog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/control/InputControls.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/control/InputControls.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +27,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=/Users/bclifton/.android/avd/Pixel_7_API_33.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=39090DLJH002X0)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -228,16 +199,27 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/SignInView.kt</url>
-          <line>143</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/network/EateryListClient.kt</url>
           <line>22</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="play_dynamic_filters_status">
+    <option name="appIdToCheckInfo">
+      <map>
+        <entry key="com.hawaiianmoose.munchmatch">
+          <value>
+            <CheckInfo lastCheckTimestamp="1736830067571" />
+          </value>
+        </entry>
+        <entry key="com.hawaiianmoose.munchmatch.test">
+          <value>
+            <CheckInfo lastCheckTimestamp="1736830067571" />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

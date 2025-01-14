@@ -9,6 +9,7 @@ data class EateryList(
     var eateries: List<Eatery> = emptyList(),
     var isSortedAlphabetically: Boolean = true,
     var lastUpdated: Long = 0L,
+    var isMatchingInProgress: Boolean = false,
     val sharedUsers: List<String> = emptyList()
 ) {
     override fun equals(other: Any?): Boolean {
@@ -20,6 +21,7 @@ data class EateryList(
         if (listId != other.listId) return false
         if (listName != other.listName) return false
         if (isSortedAlphabetically != other.isSortedAlphabetically) return false
+        if (isMatchingInProgress != other.isMatchingInProgress) return false
         if (lastUpdated != other.lastUpdated) return false
         if (eateries !=(other.eateries)) return false
         if (sharedUsers != other.sharedUsers) return false
@@ -31,6 +33,7 @@ data class EateryList(
         var result = listId.hashCode()
         result = 31 * result + listName.hashCode()
         result = 31 * result + isSortedAlphabetically.hashCode()
+        result = 31 * result + isMatchingInProgress.hashCode()
         result = 31 * result + lastUpdated.hashCode()
         result = 31 * result + eateries.hashCode()
         result = 31 * result + sharedUsers.hashCode()

@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -235,7 +236,7 @@ fun GreenButton(label: String, clickFunc: () -> Unit) {
         ),
         shape = RoundedCornerShape(6.dp)
     ) {
-        androidx.compose.material3.Text(
+        Text(
             label,
             color = Color.White,
             modifier = Modifier.padding(8.dp)
@@ -256,10 +257,29 @@ fun BlueButton(label: String, clickFunc: () -> Unit) {
         ),
         shape = RoundedCornerShape(6.dp)
     ) {
-        androidx.compose.material3.Text(
+        Text(
             label,
             color = Color.White,
             modifier = Modifier.padding(8.dp)
+        )
+    }
+}
+
+@Composable
+fun LobbyButton(label: String, clickFunc: () -> Unit) {
+    androidx.compose.material3.Button(
+        onClick = { clickFunc() },
+        modifier = Modifier
+            .height(LocalDimen.current.buttonHeight)
+            .focusable(),
+        colors = ButtonDefaults.textButtonColors(
+            containerColor = MaterialTheme.colorScheme.secondary
+        ),
+        shape = RoundedCornerShape(6.dp)
+    ) {
+        Text(
+            label,
+            color = Color.White
         )
     }
 }
@@ -281,7 +301,7 @@ fun LoadableGreenButton(isLoading: MutableState<Boolean>, label: String, clickFu
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
         ) {
-            androidx.compose.material3.Text(
+            Text(
                 text = label,
                 color = Color.White,
                 modifier = Modifier.padding(8.dp)

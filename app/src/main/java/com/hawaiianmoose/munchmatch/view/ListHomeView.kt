@@ -3,7 +3,13 @@ package com.hawaiianmoose.munchmatch.view
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,14 +19,18 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -31,13 +41,11 @@ import com.hawaiianmoose.munchmatch.R
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.util.LastUpdatedConverter
 import com.hawaiianmoose.munchmatch.view.control.ArchFooter
-import com.hawaiianmoose.munchmatch.view.control.CollaboratorBadge
 import com.hawaiianmoose.munchmatch.view.control.EmptyListPlaceholder
-import com.hawaiianmoose.munchmatch.view.control.GreenButton
 import com.hawaiianmoose.munchmatch.view.control.ListHeader
+import com.hawaiianmoose.munchmatch.view.control.LobbyButton
 import com.hawaiianmoose.munchmatch.view.control.SwipeActions
 import com.hawaiianmoose.munchmatch.view.control.SwipeActionsConfig
-import com.hawaiianmoose.munchmatch.view.control.noRippleClickable
 import com.hawaiianmoose.munchmatch.viewmodel.ListViewModel
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -126,7 +134,7 @@ fun ListHomeView(navigator: NavHostController, listViewModel: ListViewModel = vi
                                         listViewModel.sawNewUserTutorial()
                                     }
                                     val jsonList = Json.encodeToString(list)
-                                    navigator.navigate("lobby/$jsonList")
+                                    navigator.navigate("listdetail/$jsonList")
                                 },
                             backgroundColor = Color.White,
                             shape = RoundedCornerShape(
@@ -163,20 +171,13 @@ fun ListHomeView(navigator: NavHostController, listViewModel: ListViewModel = vi
                                                 .offset(y = (-4).dp)
                                         )
                                     }
-                                    CollaboratorBadge(numberOfCollaborators = list.sharedUsers.count())
-                                    IconButton(
-                                        onClick = {}
-                                    ) {
-                                        Icon(
-                                            imageVector = ImageVector.vectorResource(R.drawable.edit_icon),
-                                            "Edit List",
-                                            tint = MaterialTheme.colorScheme.primary,
-                                            modifier = Modifier.size(16.dp).offset(x = -10.dp).noRippleClickable {
-                                                val jsonList = Json.encodeToString(list)
-                                                navigator.navigate("listdetail/$jsonList")
-                                            }
-                                        )
+                                    Box(Modifier.offset(y = 8.dp)) {
+                                        LobbyButton(label = if(list.isMatchingInProgress) stringResource(id = R.string.join_button) else stringResource(id = R.string.match_button)) {
+                                            val jsonList = Json.encodeToString(list)
+                                            navigator.navigate("lobby/$jsonList")
+                                        }
                                     }
+                                    //CollaboratorBadge(numberOfCollaborators = 1) //TODO NEW TEXT TO DISPLAY TOTAL USERS list.sharedUsers.count()
                                 }
                             }
                         }
