@@ -123,7 +123,7 @@ fun ListDetailView(selectedList: EateryList, navigator: NavHostController) {
     var showEditItemModalTransitionDialog by remember { mutableStateOf(false) }
     var showAddItemModalTransitionDialog by remember { mutableStateOf(false) }
 
-    val sharedText = "Join my list on AddIt: http://zombo.com"
+    val sharedText = "Join my list on Munch Match: https://munchmatch.hawaiianmoose.com/invite?listId=12345\""
     val sendIntent: Intent = Intent().apply {
         action = Intent.ACTION_SEND
         putExtra(Intent.EXTRA_TEXT, sharedText)

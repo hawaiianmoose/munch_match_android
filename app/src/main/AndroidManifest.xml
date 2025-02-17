@@ -22,9 +22,15 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.MunchMatch">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="munchmatch.hawaiianmoose.com"
+                    android:pathPrefix="/invite" />
             </intent-filter>
         </activity>
     </application>
