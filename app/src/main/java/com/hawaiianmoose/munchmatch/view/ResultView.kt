@@ -10,22 +10,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.hawaiianmoose.munchmatch.model.MatchSession
-import com.hawaiianmoose.munchmatch.view.control.MatchViewer
 
 @Composable
-fun MatchingView(matchSession: MatchSession, navigator: NavHostController) {
+fun ResultView(matchSession: MatchSession, navigator: NavHostController) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        val sampleTexts = listOf(
-            "Arby's",
-            "Brighton Bar and Grill",
-            "El Toro",
-            "Chinese",
-            "Subway"
+        Text(
+            text = "Result View",
+            color = MaterialTheme.colorScheme.primary,
+            fontSize = 24.sp
         )
-
-        MatchViewer(strings = sampleTexts)
     }
 }

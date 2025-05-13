@@ -53,5 +53,15 @@ fun RootNavHost(isUserLoggedIn: Boolean) {
                 MatchingView(it, navController)
             }
         }
+        composable(
+            route = "results/{sessionJson}",
+            arguments = listOf(navArgument("sessionJson") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val listJson = backStackEntry.arguments?.getString("sessionJson")
+            val selectedList = listJson?.let { Json.decodeFromString<MatchSession>(it) }
+            selectedList?.let {
+                ResultView(it, navController)
+            }
+        }
     }
 }

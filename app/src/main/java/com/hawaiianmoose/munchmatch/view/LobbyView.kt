@@ -30,7 +30,14 @@ import kotlinx.serialization.json.Json
 fun LobbyView(selectedList: EateryList, navigator: NavHostController) {
     val lazyListState = rememberLazyListState()
 
-    val testJsonMatchSession = Json.encodeToString(MatchSession(sessionId = "123", muncherPicks = mutableSetOf(), mutableSetOf()))
+    val testJsonMatchSession = Json.encodeToString( //TESTING get this from DB if joining otherwise create an empty one like this
+        MatchSession(
+            sessionId = "123",
+            muncherPicks = mutableSetOf(),
+            numberOfActiveMatchers = 2,
+            munchers = mutableSetOf()
+        )
+    )
 
     Column(modifier = Modifier.padding(24.dp),
         verticalArrangement = Arrangement.SpaceBetween,
@@ -51,11 +58,18 @@ fun LobbyView(selectedList: EateryList, navigator: NavHostController) {
         }
         Spacer(Modifier.weight(5f))
         LobbyButton (label = "Notify Munchers") {
-            navigator.navigate("match/$testJsonMatchSession")
+            //Send Notification to List Users
         }
         Spacer(Modifier.weight(0.5f))
-        GreenButton(label = "Get Results!") {
-            navigator.navigate("match/$testJsonMatchSession")
+
+        if (Json.decodeFromString<MatchSession>(testJsonMatchSession).numberOfActiveMatchers > 1) {
+            GreenButton(label = "Make Your Picks!") {
+                navigator.navigate("match/$testJsonMatchSession")
+            }
+        } else {
+            GreenButton(label = "Get Results!") {
+                navigator.navigate("results/$testJsonMatchSession")
+            }
         }
         Spacer(Modifier.weight(0.5f))
     }
