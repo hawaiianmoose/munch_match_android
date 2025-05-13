@@ -201,7 +201,7 @@ fun AddItemModalTransitionDialog(
                         textStyle = MaterialTheme.typography.titleMedium,
                         placeholder = {
                             Text(
-                                stringResource(R.string.add_items_placeholder), style = MaterialTheme.typography.labelLarge, color = Color.White
+                                stringResource(R.string.add_items_placeholder), style = MaterialTheme.typography.labelLarge, color = Color.Black
                             )
                         },
                         colors = androidx.compose.material3.OutlinedTextFieldDefaults.colors(

@@ -28,7 +28,7 @@ private val ColorScheme = lightColorScheme(
     onSurface = FadedContainerBlue,
     onSurfaceVariant = FadedFillBlue,
     onTertiary = Gray,
-    surfaceVariant = TransparentBlue
+    surfaceVariant = TransparentWhite
 )
 
 @Composable
