@@ -22,6 +22,7 @@ import com.hawaiianmoose.munchmatch.model.EateryList
 import com.hawaiianmoose.munchmatch.model.MatchSession
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.view.control.GreenButton
+import com.hawaiianmoose.munchmatch.view.control.LobbyButton
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -29,13 +30,13 @@ import kotlinx.serialization.json.Json
 fun LobbyView(selectedList: EateryList, navigator: NavHostController) {
     val lazyListState = rememberLazyListState()
 
-    val testJsonMatchSession = Json.encodeToString(MatchSession(sessionId = "123", 4, mapOf()))
+    val testJsonMatchSession = Json.encodeToString(MatchSession(sessionId = "123", muncherPicks = mutableSetOf(), mutableSetOf()))
 
     Column(modifier = Modifier.padding(24.dp),
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = CenterHorizontally) {
         Spacer(Modifier.weight(1f))
-        Text("Munchers In Lobby", fontSize = 28.sp)
+        Text("Munchers Matching...", fontSize = 28.sp)
         Spacer(Modifier.size(16.dp))
         LazyColumn(
             horizontalAlignment = CenterHorizontally,
@@ -49,7 +50,11 @@ fun LobbyView(selectedList: EateryList, navigator: NavHostController) {
             }
         }
         Spacer(Modifier.weight(5f))
-        GreenButton(label = "Start Matching!") {
+        LobbyButton (label = "Notify Munchers") {
+            navigator.navigate("match/$testJsonMatchSession")
+        }
+        Spacer(Modifier.weight(0.5f))
+        GreenButton(label = "Get Results!") {
             navigator.navigate("match/$testJsonMatchSession")
         }
         Spacer(Modifier.weight(0.5f))
@@ -60,7 +65,15 @@ fun LobbyView(selectedList: EateryList, navigator: NavHostController) {
 @Preview
 fun LobbyPreview() {
     MunchMatchTheme {
-        val eateryList = EateryList(sharedUsers = listOf("James D (You)", "Mike M", "Laura H", "Kristie B"))
+        val eateryList = EateryList(
+            sharedUsers = listOf(
+                "(You) James D's picks are in!",
+                "Mike M is still matching...",
+                "Laura H is still matching...",
+                "Kristie B's picks are in!",
+                "Dave M has not joined."
+            )
+        )
         LobbyView(eateryList, NavHostController(LocalContext.current))
     }
 }

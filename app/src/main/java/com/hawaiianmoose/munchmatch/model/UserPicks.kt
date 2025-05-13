@@ -3,7 +3,7 @@ package com.hawaiianmoose.munchmatch.model
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ListLobby(
-    var hostUser: String,
-    var lobbyUsers: Map<String, Boolean>,
+data class UserPicks(
+    var userName: String,
+    var userPicks: Map<String, Boolean>
 )

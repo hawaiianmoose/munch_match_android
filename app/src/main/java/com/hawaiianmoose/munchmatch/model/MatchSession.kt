@@ -5,6 +5,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class MatchSession(
     var sessionId: String = "",
-    var numberOfMatchers: Int,
-    var matchedEateries: Map<String, Int>
+    var muncherPicks: MutableSet<UserPicks>,
+    var matchers: MutableSet<UserProfile>
 )

@@ -10,12 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="737b1d4f-143f-4876-a60b-6bf40f4b8ce2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/UserPicks.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/ui/theme/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/ui/theme/Color.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/ListLobby.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/MatchSession.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/MatchSession.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/LobbyView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/LobbyView.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,7 @@
       <list>
         <option value="resourceFile" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
@@ -212,12 +212,12 @@
       <map>
         <entry key="com.hawaiianmoose.munchmatch">
           <value>
-            <CheckInfo lastCheckTimestamp="1739832221412" />
+            <CheckInfo lastCheckTimestamp="1747153139043" />
           </value>
         </entry>
         <entry key="com.hawaiianmoose.munchmatch.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1739832221405" />
+            <CheckInfo lastCheckTimestamp="1747153139029" />
           </value>
         </entry>
       </map>
