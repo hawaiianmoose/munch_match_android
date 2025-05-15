@@ -21,6 +21,7 @@ import androidx.compose.ui.window.DialogProperties
 import androidx.compose.ui.window.SecureFlagPolicy
 import com.hawaiianmoose.munchmatch.R
 import com.hawaiianmoose.munchmatch.model.EateryList
+import com.hawaiianmoose.munchmatch.model.UserProfile
 import com.hawaiianmoose.munchmatch.ui.theme.LocalDimen
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.util.IdGenerator
@@ -139,7 +140,7 @@ fun NewListDialog(
                                         textState.value.text.trim(),
                                         eateries = listOf(),
                                         lastUpdated = Instant.now().epochSecond,
-                                        sharedUsers = listOf("1","2") //TODO make this emptylist
+                                        sharedUsers = listOf(UserProfile(), UserProfile()) //TODO make this emptylist
                                     )
                                     listViewModel.addNewEateryList(newEateryList)
                                     openDialog.value = false

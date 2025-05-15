@@ -72,8 +72,8 @@ object UserProfileClient {
                     val eateryListRef = eateryDb.document(list.listId)
                     if (list.sharedUsers.isEmpty()) {
                         eateryListRef.delete() // Delete unshared lists
-                    } else if (list.sharedUsers.contains(userProfile.userEmail)) {
-                        eateryListRef.update("sharedUsers", FieldValue.arrayRemove(userProfile.userEmail))
+                    } else if (list.sharedUsers.any { userprofile -> userprofile.userEmail == userProfile.userEmail }) {
+                        eateryListRef.update("sharedUsers", FieldValue.arrayRemove(userProfile))
                     }
                 }
                 userProfileRef.delete()

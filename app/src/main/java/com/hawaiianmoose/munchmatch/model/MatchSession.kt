@@ -6,6 +6,5 @@ import kotlinx.serialization.Serializable
 data class MatchSession(
     var sessionId: String = "",
     var numberOfActiveMatchers: Int,
-    var muncherPicks: MutableSet<UserPicks>,
-    var munchers: MutableSet<UserProfile>
+    var muncherPicks: MutableSet<UserPicks>
 )

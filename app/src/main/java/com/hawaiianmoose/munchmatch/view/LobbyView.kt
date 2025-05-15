@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.hawaiianmoose.munchmatch.model.EateryList
 import com.hawaiianmoose.munchmatch.model.MatchSession
+import com.hawaiianmoose.munchmatch.model.UserProfile
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.view.control.GreenButton
 import com.hawaiianmoose.munchmatch.view.control.LobbyButton
@@ -34,8 +35,7 @@ fun LobbyView(selectedList: EateryList, navigator: NavHostController) {
         MatchSession(
             sessionId = "123",
             muncherPicks = mutableSetOf(),
-            numberOfActiveMatchers = 2,
-            munchers = mutableSetOf()
+            numberOfActiveMatchers = 2
         )
     )
 
@@ -53,7 +53,7 @@ fun LobbyView(selectedList: EateryList, navigator: NavHostController) {
                 .padding(start = 8.dp, end = 8.dp, bottom = 2.dp)
         ) {
             items(items = selectedList.sharedUsers) { item ->
-                Text(item)
+                Text(item.userName)
             }
         }
         Spacer(Modifier.weight(5f))
@@ -81,11 +81,11 @@ fun LobbyPreview() {
     MunchMatchTheme {
         val eateryList = EateryList(
             sharedUsers = listOf(
-                "(You) James D's picks are in!",
-                "Mike M is still matching...",
-                "Laura H is still matching...",
-                "Kristie B's picks are in!",
-                "Dave M has not joined."
+                UserProfile(userName = "JimboDean"),
+                UserProfile(userName = "MikeyM"),
+                UserProfile(userName = "LauraH"),
+                UserProfile(userName = "KristieB"),
+                UserProfile(userName = "DaveM")
             )
         )
         LobbyView(eateryList, NavHostController(LocalContext.current))

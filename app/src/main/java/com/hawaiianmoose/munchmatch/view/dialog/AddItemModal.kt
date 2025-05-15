@@ -145,7 +145,7 @@ fun AddItemModalTransitionDialog(
                     .background(MaterialTheme.colorScheme.primary), content = {
                     Text(
                         text = stringResource(R.string.add_items),
-                        color = Color.White,
+                        color = Color.Black,
                         fontSize = 20.sp,
                         modifier = Modifier
                             .align(Alignment.Center)
@@ -208,15 +208,15 @@ fun AddItemModalTransitionDialog(
                             focusedContainerColor = MaterialTheme.colorScheme.surfaceVariant,
                             unfocusedContainerColor = MaterialTheme.colorScheme.surfaceVariant,
                             errorContainerColor = MaterialTheme.colorScheme.surfaceVariant,
-                            focusedPlaceholderColor = Color.White,
-                            unfocusedPlaceholderColor = Color.White,
+                            focusedPlaceholderColor = Color.Black,
+                            unfocusedPlaceholderColor = Color.Black,
                             focusedBorderColor = Color.Transparent,
                             unfocusedBorderColor = Color.Transparent,
-                            focusedTextColor = Color.White,
-                            unfocusedTextColor = Color.White,
+                            focusedTextColor = Color.Black,
+                            unfocusedTextColor = Color.Black,
                             errorBorderColor = MaterialTheme.colorScheme.error,
-                            errorLabelColor = Color.White,
-                            cursorColor = Color.White
+                            errorLabelColor = Color.Black,
+                            cursorColor = Color.Black
                         ),
                         shape = RoundedCornerShape(32.dp),
                         keyboardActions = KeyboardActions(onDone = { addItem(addEateryTextState.value.text) }),

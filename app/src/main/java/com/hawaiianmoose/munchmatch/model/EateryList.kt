@@ -10,7 +10,7 @@ data class EateryList(
     var isSortedAlphabetically: Boolean = true,
     var lastUpdated: Long = 0L,
     var isMatchingInProgress: Boolean = false,
-    val sharedUsers: List<String> = emptyList()
+    val sharedUsers: List<UserProfile> = emptyList()
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
