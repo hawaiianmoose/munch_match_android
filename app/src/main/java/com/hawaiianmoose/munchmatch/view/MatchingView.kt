@@ -18,13 +18,7 @@ fun MatchingView(matchSession: MatchSession, navigator: NavHostController) {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        val sampleTexts = listOf(
-            "Arby's",
-            "Brighton Bar and Grill",
-            "El Toro",
-            "Chinese",
-            "Subway"
-        )
+        val sampleTexts = matchSession.selectedList.eateries.map { eatery -> eatery.name }
 
         MatchViewer(strings = sampleTexts)
     }

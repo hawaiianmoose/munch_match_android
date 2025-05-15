@@ -35,7 +35,8 @@ fun LobbyView(selectedList: EateryList, navigator: NavHostController) {
         MatchSession(
             sessionId = "123",
             muncherPicks = mutableSetOf(),
-            numberOfActiveMatchers = 2
+            numberOfActiveMatchers = 2,
+            selectedList = selectedList
         )
     )
 
