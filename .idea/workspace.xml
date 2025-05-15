@@ -10,16 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="737b1d4f-143f-4876-a60b-6bf40f4b8ce2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/EateryList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/EateryList.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/MatchSession.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/MatchSession.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/UserPicks.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/UserPicks.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/network/UserProfileClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/network/UserProfileClient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/ui/theme/Type.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/ui/theme/Type.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/LobbyView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/LobbyView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/AddItemModal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/AddItemModal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/NewListDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/dialog/NewListDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
