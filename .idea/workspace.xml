@@ -10,11 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="737b1d4f-143f-4876-a60b-6bf40f4b8ce2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/MatchSession.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/model/MatchSession.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/LobbyView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/LobbyView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/MatchingView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/MatchingView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/control/MatchViewer.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +202,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/network/EateryListClient.kt</url>
           <line>22</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/hawaiianmoose/munchmatch/view/LobbyView.kt</url>
+          <line>35</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
