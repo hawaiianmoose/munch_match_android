@@ -8,8 +8,10 @@ import androidx.datastore.preferences.core.byteArrayPreferencesKey
 import androidx.datastore.preferences.core.edit
 import com.google.firebase.auth.FirebaseAuth
 import com.hawaiianmoose.munchmatch.model.EateryList
+import com.hawaiianmoose.munchmatch.model.MatchSession
 import com.hawaiianmoose.munchmatch.model.UserProfile
 import com.hawaiianmoose.munchmatch.network.EateryListClient
+import com.hawaiianmoose.munchmatch.network.MatchSessionClient
 import com.hawaiianmoose.munchmatch.network.UserProfileClient
 import io.ktor.utils.io.core.toByteArray
 import kotlinx.coroutines.CoroutineScope
@@ -25,6 +27,9 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 import okio.Path.Companion.toPath
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+import kotlin.coroutines.suspendCoroutine
 
 object DataStoreProvider {
     private val backgroundScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
@@ -153,6 +158,18 @@ object DataStoreProvider {
 
     fun isSignedIn(): Boolean {
         return isSignedIn
+    }
+
+    suspend fun getOrCreateMatchSession(userProfile: UserProfile, eateryList: EateryList): MatchSession {
+        return suspendCoroutine { continuation ->
+            MatchSessionClient.getOrCreateMatchSession(userProfile, eateryList) { result ->
+                if (result != null) {
+                    continuation.resume(result)
+                } else {
+                    continuation.resumeWithException(Exception("Failed to create or fetch MatchSession"))
+                }
+            }
+        }
     }
 
     private suspend fun storeUserListLocally(eateryList: EateryList) {

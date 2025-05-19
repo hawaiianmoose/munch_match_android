@@ -4,6 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class UserPicks(
-    var user: UserProfile,
-    var userPicks: Map<String, Boolean>
+    var user: UserProfile = UserProfile(),
+    var userPicks: Map<String, Boolean> = mapOf()
 )

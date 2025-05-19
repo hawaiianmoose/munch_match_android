@@ -11,34 +11,46 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import com.hawaiianmoose.munchmatch.data.DataStoreProvider
 import com.hawaiianmoose.munchmatch.model.EateryList
 import com.hawaiianmoose.munchmatch.model.MatchSession
 import com.hawaiianmoose.munchmatch.model.UserProfile
 import com.hawaiianmoose.munchmatch.ui.theme.MunchMatchTheme
 import com.hawaiianmoose.munchmatch.view.control.GreenButton
 import com.hawaiianmoose.munchmatch.view.control.LobbyButton
+import com.hawaiianmoose.munchmatch.viewmodel.LobbyViewModel
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
 @Composable
-fun LobbyView(selectedList: EateryList, navigator: NavHostController) {
+fun LobbyView(selectedList: EateryList, navigator: NavHostController, lobbyViewModel: LobbyViewModel = viewModel()) {
     val lazyListState = rememberLazyListState()
 
     val testJsonMatchSession = Json.encodeToString( //TESTING get this from DB if joining otherwise create an empty one like this
         MatchSession(
             sessionId = "123",
-            muncherPicks = mutableSetOf(),
+            matcherPicks = mutableListOf(),
             numberOfActiveMatchers = 2,
-            selectedList = selectedList
+            selectedList = selectedList,
+            completed = false
         )
     )
+
+    LaunchedEffect(selectedList.listId) {
+        lobbyViewModel.initializeMatchingSession(
+            DataStoreProvider.getStoredUserProfile(),
+            selectedList
+        )
+    }
 
     Column(modifier = Modifier.padding(24.dp),
         verticalArrangement = Arrangement.SpaceBetween,
